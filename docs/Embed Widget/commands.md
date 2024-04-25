@@ -50,11 +50,11 @@ cmndChat("init", {
 });
 
 const hideWidget = () => {
-  cmndChat("show");
+  cmndChat("hide");
 };
 
 const showWidget = () => {
-  cmndChat("hide");
+  cmndChat("show");
 };
 ```
 
