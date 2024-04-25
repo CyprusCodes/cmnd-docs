@@ -11,7 +11,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "Fast execution",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    Svg: require("@site/static/img/undraw_responsive.svg").default,
     description: (
       <>
         CMND.ai integrates with your internal databases, workflows, any APIs and
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Data Harmony",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    Svg: require("@site/static/img/undraw_online_connection.svg").default,
     description: (
       <>
         We are putting you in command of your data. We bring all of your data
@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Security",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    Svg: require("@site/static/img/undraw_code_review.svg").default,
     description: (
       <>
         CMDN.ai uses Role Based Access controls to make sure only authorised
