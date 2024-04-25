@@ -6,7 +6,7 @@ sidebar_position: 5
 
 1. Before you begin, you will need your `Organization ID` and your `Chatbot ID` these can be gotten from [CMND](https://app.cmnd.ai).
 
-2. To Initialize the embed widget, you will need to call the `"init"` command from a html script attached to your web page, and pass in your `Organization ID` and `Chatbot ID`.
+2. To Initialize the embed widget, you will need to call the `"init"` command from an HTML script attached to your web page and pass in your `Organization ID` and `Chatbot ID`.
 
 :::note
 `Organization ID` will be a number example: 5.
@@ -49,7 +49,7 @@ window.cmndChat("init", {
 </html>
 ```
 :::warning
- You can initialize the embed widget from any script attached to your website, but ensure your ```DOM``` is loaded first before calling the ```"init"``` command. In the above example we have used an event listener to check if our ```DOM``` is loaded.
+ You can initialize the embed widget from any script attached to your website, but ensure your ```DOM``` is loaded first before calling the ```"init"``` command. In the above example, we have used an event listener to check if our ```DOM``` is loaded.
 :::
 
 :::info

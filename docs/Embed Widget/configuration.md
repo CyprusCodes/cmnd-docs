@@ -9,7 +9,7 @@ There are two types of configurations for cmnd namely `hardcoded` configurations
 ## 1.  **Hardcoded configurations:** 
 
 These configurations are hardcoded into the object passed in the [`init`](/docs/Embed%20Widget/commands).
-    - **hide_default_launcher**: This configuration hides the embed widget by default. It will be hidden until you call the [`show`](/docs/Embed%20Widget/commands) command. It is optional to use this configuration. It's value is a boolean, `true` or `false`
+    - **hide_default_launcher**: This configuration hides the embed widget by default. It will be hidden until you call the [`show`](/docs/Embed%20Widget/commands) command. It is optional to use this configuration. Its value is a boolean, `true` or `false`
 
 **Below is an example**
 
@@ -22,7 +22,7 @@ cmndChat("init", {
 });
 ```
 
-    -   **custom_launcher_selector**: This configuration places your embed widget inside a custom div with the `ID` attribute of your choice. It is optional to use this configuration. It's value is a `string`
+    -   **custom_launcher_selector**: This configuration places your embed widget inside a custom div with the `ID` attribute of your choice. It is optional to use this configuration. Its value is a `string`
 
 **Below is an example**
 
@@ -44,7 +44,7 @@ in the above example it places the embed widget in a div with an id of `"my-div"
 
 :::info
 
-You can use both **hide_default_launcher** and **custom_launcher_selector** simulataneously.
+You can use both **hide_default_launcher** and **custom_launcher_selector** simultaneously.
 
 :::
 
@@ -62,7 +62,7 @@ cmndChat("init", {
 
 :::tip
 
-The order of the configurations do no matter.
+The order of the configurations does not matter.
 
 :::
 

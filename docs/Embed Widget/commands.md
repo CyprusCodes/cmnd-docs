@@ -4,10 +4,10 @@ sidebar_position: 6
 
 # Commands
 
-CMND has 3 commands `init`, `show` and `hide`.
+CMND embed widget has 3 commands `init`, `show` and `hide`.
 
 1. **The `init` command**: This command is used to initialize the embed widget, it is mandatory to call this command before the embed widget can be used.
-   It it takes parameters `Organization ID` and `Chatbot ID` inside an object.
+It takes parameters `Organization ID` and `Chatbot ID` inside an object.
 
 **Below is an example**
 
@@ -38,7 +38,7 @@ window.cmndChat("show");
 ```
 
 :::info
-These cmnd commands can be called without calling `window`
+These CMND commands can be called without calling `window`
 :::
 **Below is an example**
 
@@ -58,7 +58,7 @@ const showWidget = () => {
 };
 ```
 
-**Below is an full use case**
+**Below is a full use case**
 
 ```HTML
 <!DOCTYPE html>
