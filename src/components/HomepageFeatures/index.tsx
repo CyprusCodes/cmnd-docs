@@ -10,32 +10,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Fast execution",
+    Svg: require("@site/static/img/undraw_responsive.svg").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        CMND.ai integrates with your internal databases, workflows, any APIs and
+        software. We are the BusinessGPT
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: "Data Harmony",
+    Svg: require("@site/static/img/undraw_online_connection.svg").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        We are putting you in command of your data. We bring all of your data
+        together, from different <code>sources</code> and <code>formats.</code>
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: "Security",
+    Svg: require("@site/static/img/undraw_code_review.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        CMDN.ai uses Role Based Access controls to make sure only authorised
+        staff can see relevant data and utilise platform connections.
       </>
     ),
   },
