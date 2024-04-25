@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Concepts
 
 - **LLM**: A type of AI, like ChatGPT, trained on vast amounts of text data to generate human-like responses based on text inputs.
