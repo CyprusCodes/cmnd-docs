@@ -41,5 +41,5 @@ CMND is an AI-powered tool designed to help users integrate with their extension
 
 If you're ready to take your workflow to the next level, consider integrating CMND into your toolkit. With its powerful AI capabilities, seamless extension integration, and user-friendly interface, CMND can transform how you work and help you achieve your goals more efficiently.
 
-To learn more about CMND and how it can benefit your work, visit the [official website](https://www.cmnd.com) and get started today!
+To learn more about CMND and how it can benefit your work, visit the [official website](https://www.cmnd.ai) and get started today!
 
