@@ -22,6 +22,8 @@ Then on the connections screen find cmnd extension
 
 and add your connection's details:
 
+make sure that there is no `/` at the api url.
+
 ![../../static/img/config-tool.png](../../static/img/config-tool.png)
 
 after adding the connection you will be prompted with a successfull message like:
