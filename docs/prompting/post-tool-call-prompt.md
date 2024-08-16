@@ -29,7 +29,7 @@ A hidden message is sent with the role of "user" and "hiddenFromUser": true. Thi
 
 Here’s a visual example to illustrate how this technique is implemented.
 
-![../../static/img/assistants.png](../../static/img/post-tool-call) 
+![../../static/img/assistants.png](../../static/img/post-tool-call.png) 
 
 Flow of Messages: The flow of messages in the conversation would look like this:
 
