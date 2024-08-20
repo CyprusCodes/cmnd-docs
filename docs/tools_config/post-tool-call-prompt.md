@@ -19,7 +19,7 @@ Consider the example where a user is logging into a system. The process involves
         "isDangerous": False,
         "functionType": "backend",
         "isLongRunningTool": False,
-        "postCallPrompt": "if the login tool output is failure, ask the user to try again, if successfuk, contunye the conversation."
+        "postCallPrompt": "if the login tool output is failure, ask the user to try again, if successful, continue the conversation."
 
     }
 ```    
