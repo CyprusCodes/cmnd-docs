@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9267],{8289:e=>{e.exports=JSON.parse('[{"label":"cmnd","permalink":"/blog/tags/cmnd","count":1},{"label":"ai","permalink":"/blog/tags/ai","count":1},{"label":"coding","permalink":"/blog/tags/coding","count":1}]')}}]);
