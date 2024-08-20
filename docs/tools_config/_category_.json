@@ -1,8 +1,8 @@
 {
-  "label": "Tools Configuration",
+  "label": "Tool Configurations",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Tools Configuration"
+    "description": "Tool Configurations"
   }
 }
