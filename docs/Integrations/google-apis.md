@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+# Google APIs
+
 This guide will walk you through the process of setting up Google OAuth 2.0 credentials to authenticate and authorize your cmnd integration to access Google APIs.
 
 ## Prerequisites
