@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# How to Obtain an Azure Bing Search API Key
+# Azure Bing Search API Key
 
 This guide will help you acquire a Bing Search API key from Azure.
 
