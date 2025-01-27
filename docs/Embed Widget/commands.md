@@ -1,13 +1,13 @@
 ---
-sidebar_position: 6
+sidebar_position: 3
 ---
 
-# Commands
+# Basic Commands
 
-CMND embed widget has 3 commands `init`, `show` and `hide`.
+CMND embed widget has 3 basic commands `init`, `show` and `hide`.
 
 1. **The `init` command**: This command is used to initialize the embed widget, it is mandatory to call this command before the embed widget can be used.
-It takes parameters `Organization ID` and `Chatbot ID` inside an object.
+   It takes parameters `Organization ID` and `Chatbot ID` inside an object.
 
 **Below is an example**
 
