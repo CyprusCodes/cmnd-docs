@@ -1,0 +1,331 @@
+---
+sidebar_position: 5
+---
+
+import show_form_sample from "../../static/img/ui_tools_images/show_form_sample.png";
+
+# UI Tools
+
+### Overview
+
+The embed widget offers the ability to run tools with AI context or arguments, allowing you to display information or manipulate the DOM based on the customization provided to the tool. Additionally, it includes a set of built-in tools accessible via `window.cmndBuiltInTools`.
+
+### Built in tools
+
+The built-in tools are preconfigured utilities that come with the embed widget. These tools are available by default unless you provide custom tools.
+
+Below is a list of the built-in tools along with their descriptions.
+
+1.  **show_form**  
+    Displays a form based on a provided JSON schema.
+
+2.  **capture_signature**  
+    Captures a user's signature.
+
+3.  **show_rating**  
+    Displays a rating input widget.
+
+4.  **show_video_player**  
+    Displays a video player.
+
+5.  **show_image_viewer**  
+     Displays an image viewer.
+
+These tools can be utilized by providing a prompt related to the tool's functionality.
+For example, asking _"Show me a login form"_ will render a login form.
+
+<a href={show_form_sample} target="_blank">
+  <img src={show_form_sample} width="400" />
+</a>
+
+### Custom Tools
+
+Custom tools allow you to extend the functionality of the embed widget by defining your own tools tailored to specific use cases. These tools can override the default built-in tools or work alongside them by leveraging `window.cmndBuiltInTools`. Custom tools provide flexibility and adaptability, enabling you to create unique experiences that align with your application's requirements.
+
+:::warning
+Providing custom tools overwites the built in tools, but you can extend your custom ui tools with the built in tools using `window.cmndBuiltInTools`.
+:::
+
+### Defining a Custom UI Tool
+
+Custom UI tools allow you to extend the functionality of the embed widget to suit your specific requirements. Each custom tool must have a `functionType` set to `ui` and follow a consistent structure. Below is a guide on how to define a custom UI tool, explained using a sample tool.
+
+---
+
+#### Example: Custom UI Tool Definition
+
+Here’s a complete example of a custom tool:
+Example functionality:
+
+    - Updates the background color of the page.
+    - Updates the `innerHTML` of the referenced element with a confirmation message.
+
+```javascript
+// script.js
+{
+  name: "change_background_color", // Unique tool name
+  description: "Changes the background color of the page", // Tool description
+  category: "UI", // Main category
+  subcategory: "BG", // Subcategory
+  functionType: "ui", // Function type (always "ui")
+  dangerous: false, // Safe tool indicator
+  associatedCommands: [], // Additional commands (if any)
+  prerequisites: [], // Prerequisites (if any)
+  argumentSchema: { // Arguments required by the tool
+    type: "object",
+    properties: {
+      bgColor: {
+        type: "string", // The background color argument
+        minLength: 1, // Minimum length validation
+        errorMessage: {
+          required: "Background Color is required", // Error message if missing
+        },
+      },
+    },
+    required: ["bgColor"], // Required arguments
+  },
+  rerun: true, // Allows rerunning the tool
+  rerunWithDifferentParameters: true, // Allows rerunning with different inputs
+  capturesUserInput: true, // Captures user input
+  runCmd: ({ functionArgs }, ref) => {
+    const { bgColor } = functionArgs;
+    const messageContainer = ref;
+
+    if (messageContainer) {
+      messageContainer.innerHTML = `Background color changed to ${bgColor}`;
+    }
+
+    document.body.style.backgroundColor = bgColor; // Change background color
+  },
+}
+```
+
+---
+
+#### Key Properties of a Custom UI Tool
+
+1. **`name`**  
+   A unique identifier for the tool.  
+   Example: `"change_background_color"`
+
+2. **`description`**  
+   A short description of what the tool does.  
+   Example: `"Changes the background color of the page"`
+
+3. **`category`** and **`subcategory`**  
+   Logical groupings for the tool.  
+   Example:
+
+   - `category`: `"UI"`
+   - `subcategory`: `"BG"`
+
+4. **`functionType`**  
+   Must always be set to `"ui"` for custom tools.
+
+5. **`dangerous`**  
+   Indicates whether the tool performs potentially harmful actions.  
+   Example: `false`
+
+6. **`associatedCommands`** and **`prerequisites`**  
+   Define additional commands or prerequisites required by the tool. These can be left empty if not needed.  
+   Example: `[]`
+
+7. **`argumentSchema`**  
+   Defines the arguments required to run the tool in JSON schema format:
+
+   - `properties`: Lists the arguments.  
+     Example: `bgColor` (a required string).
+   - `required`: Specifies mandatory arguments.
+   - `errorMessage`: Custom error messages for validation.
+
+8. **`rerun`** and **`rerunWithDifferentParameters`**  
+   Specifies if the tool can be rerun with the same or modified parameters.  
+   Example: Both set to `true`.
+
+9. **`capturesUserInput`**  
+   Indicates whether the tool interacts with user input.  
+   Example: `true`
+
+10. **`runCmd`**  
+    The function that implements the tool’s functionality. It receives:
+
+    - `functionArgs`: Contains the tool's arguments (e.g., `bgColor`).
+    - `ref`: A reference to a DOM element that can be updated.
+
+---
+
+### Usage
+
+By Default we do not need to register built in tools, but we need to register custom UI tools using the `registerTools` command
+
+```javascript
+// script.js
+window.cmndChat(
+  "registerTools",
+   ui_tools: [
+      {
+         name: "change_background_color",
+         // ... other values
+      }
+      {
+         name: "navigate_to_page",
+         //... other values
+      }
+   ]
+);
+```
+
+To extend **custom UI tools** with **built in tools** you will need to include the built in tools using `window.cmndBuiltInTools`. Below is a example
+
+```javascript
+// script.js
+window.cmndChat(
+  "registerTools",
+   ui_tools: [
+      window.cmndBuiltInTools.capture_signature,
+      window.cmndBuiltInTools.show_form,
+      {
+         name: "change_background_color",
+         // ... other values
+      }
+      {
+         name: "navigate_to_page",
+         //... other values
+      }
+   ]
+);
+```
+
+---
+
+### Advanced Custom UI Tool Dom Manipulation Example
+
+```javascript
+{
+  name: "plot_graph",
+  description: "Plots a graph on the page using Chart.js",
+  category: "UI",
+  subcategory: "Graph",
+  functionType: "ui",
+  dangerous: false,
+  associatedCommands: [],
+  prerequisites: [],
+  argumentSchema: {
+    type: "object",
+    properties: {
+      type: {
+        type: "string",
+        enum: ["line", "bar", "pie", "doughnut"],
+        errorMessage: {
+          required: "Graph type is required",
+          enum: "Graph type must be one of: line, bar, pie, or doughnut"
+        }
+      },
+      data: {
+        type: "object",
+        properties: {
+          labels: {
+            type: "array",
+            items: { type: "string" },
+            errorMessage: {
+              required: "Labels for the graph are required"
+            }
+          },
+          datasets: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                label: { type: "string" },
+                data: {
+                  type: "array",
+                  items: { type: "number" },
+                  errorMessage: {
+                    required: "Dataset values are required"
+                  }
+                },
+                backgroundColor: {
+                  type: "array",
+                  items: { type: "string" }
+                },
+                borderColor: {
+                  type: "array",
+                  items: { type: "string" }
+                },
+                borderWidth: { type: "number" }
+              }
+            }
+          }
+        },
+        required: ["labels", "datasets"]
+      }
+    },
+    required: ["type", "data"]
+  },
+  rerun: true,
+  rerunWithDifferentParameters: true,
+  capturesUserInput: true,
+  runCmd: ({ functionArgs }, ref) => {
+    const { type, data } = functionArgs;
+
+    // Check if Chart.js is already loaded
+    if (!window.Chart) {
+      console.log("Chart.js not found. Loading dynamically...");
+
+      // Create a script element to load Chart.js
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+      script.onload = () => {
+        console.log("Chart.js loaded successfully.");
+        renderChart();
+      };
+      script.onerror = () => {
+        console.error("Failed to load Chart.js.");
+      };
+
+      document.head.appendChild(script);
+    } else {
+      renderChart();
+    }
+
+    function renderChart() {
+      // Ensure the ref element exists
+      if (!ref) {
+        console.error("No reference element provided for the chart.");
+        return;
+      }
+
+      // Check if the ref element already contains a canvas, if so, reuse it
+      let canvas = ref.querySelector("canvas");
+      if (!canvas) {
+        // Create a new canvas element
+        canvas = document.createElement("canvas");
+        ref.appendChild(canvas);
+      }
+
+      // Destroy any existing chart on the canvas
+      if (ref.chartInstance) {
+        ref.chartInstance.destroy();
+      }
+
+      // Render the chart using Chart.js
+      const ctx = canvas.getContext("2d");
+      ref.chartInstance = new Chart(ctx, {
+        type,
+        data,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "top"
+            }
+          }
+        }
+      });
+
+      console.log("Graph successfully plotted inside the provided ref.");
+    }
+  }
+}
+```
