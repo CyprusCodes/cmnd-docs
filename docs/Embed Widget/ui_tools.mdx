@@ -10,7 +10,7 @@ import show_form_sample from "../../static/img/ui_tools_images/show_form_sample.
 
 The embed widget offers the ability to run tools with AI context or arguments, allowing you to display information or manipulate the DOM based on the customization provided to the tool. Additionally, it includes a set of built-in tools accessible via `window.cmndBuiltInTools`.
 
-### Built in tools
+### built-in tools
 
 The built-in tools are pre configured utilities that come with the embed widget. These tools are available by default unless you provide custom tools.
 
@@ -43,7 +43,7 @@ For example, asking _"Show me a login form"_ will render a login form.
 Custom UI tools allow you to extend the functionality of the embed widget by defining your own tools tailored to specific use cases. These tools can override the default built-in tools or work alongside them by leveraging `window.cmndBuiltInTools`. Custom tools provide flexibility and adaptability, enabling you to create unique experiences that align with your application's requirements.
 
 :::warning
-Providing custom UI tools overwrites the built in tools, but you can extend your custom UI tools with the built in tools using `window.cmndBuiltInTools`.
+Providing custom UI tools overwrites the built-in tools, but you can extend your custom UI tools with the built-in tools using `window.cmndBuiltInTools`.
 :::
 
 ### Defining a Custom UI Tool
@@ -156,7 +156,7 @@ Example functionality:
 
 ### Usage
 
-We do not need to register [built in tools](#built-in-tools), but we need to register custom UI tools using the `registerTools` command
+We do not need to register [built-in tools](#built-in-tools), but we need to register custom UI tools using the `registerTools` command
 
 ```javascript
 // script.js
@@ -175,7 +175,7 @@ window.cmndChat(
 );
 ```
 
-To extend **custom UI tools** with **built in tools** you will need to include the built in tools using `window.cmndBuiltInTools`. Below is a example
+To extend **custom UI tools** with **built-in tools** you will need to include the built-in tools using `window.cmndBuiltInTools`. Below is a example
 
 ```javascript
 // script.js
