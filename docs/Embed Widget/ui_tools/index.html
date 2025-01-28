@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.5.2">
 <title data-rh="true">UI Tools | CMND</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UI Tools | CMND"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/cmnd-favicon-v3.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="CMND RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="CMND Atom Feed"><link rel="stylesheet" href="/assets/css/styles.bfb58ac0.css">
-<script src="/assets/js/runtime~main.ed55a4b4.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.1d94e46b.js" defer="defer"></script>
 <script src="/assets/js/main.2ac7f6a4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -41,28 +41,27 @@
 For example, asking <em>&quot;Show me a login form&quot;</em> will render a login form.</p>
 <a href="/assets/images/show_form_sample-6aebedbf8c8fba013d58b9f24dd88faa.png" target="_blank"><img src="/assets/images/show_form_sample-6aebedbf8c8fba013d58b9f24dd88faa.png" width="400"></a>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="types-of-ui-tools">Types of UI Tools<a href="#types-of-ui-tools" class="hash-link" aria-label="Direct link to Types of UI Tools" title="Direct link to Types of UI Tools">​</a></h3>
-<h1>Types of UI Tools</h1>
 <p>There are four variations of UI tools that you can implement and use:</p>
 <ol>
 <li>
 <p><strong>Rendered in the chat box as a message card, without capturing user input</strong><br>
 <!-- -->These tools are displayed in the chat box as message cards and do not require user input. They must use the <code>ref</code> parameter within their <code>runCmd</code> method.
-<strong>Example:</strong> <code>plot_graph</code></p>
+<strong>Example:</strong> <a href="#example-rendered-in-the-chat-box-as-a-message-card-without-capturing-user-input">plot_graph</a></p>
 </li>
 <li>
 <p><strong>Rendered in the chat box as a message card, capturing user input</strong><br>
 <!-- -->These tools are displayed in the chat box as message cards and require user input. They must use the <code>ref</code> and <code>captureResults</code> parameters within their <code>runCmd</code> method.<br>
-<strong>Example:</strong> <code>capture_signature</code></p>
+<strong>Example:</strong> `<a href="#example-rendered-in-the-chat-box-as-a-message-card-capturing-user-input">capture_user_name</a></p>
 </li>
 <li>
 <p><strong>Not rendered in the chat box, without capturing user input</strong><br>
 <!-- -->These tools are not displayed in the chat box and do not require user input. They might access the DOM directly if necessary. These tools only use the <code>functionArgs</code> parameter within their <code>runCmd</code> method.<br>
-<strong>Example:</strong> <code>change_background_color</code></p>
+<strong>Example:</strong> <a href="#example-not-rendered-in-the-chat-box-without-capturing-user-input">change_background_color</a></p>
 </li>
 <li>
 <p><strong>Not rendered in the chat box, capturing user input</strong><br>
 <!-- -->These tools are not displayed in the chat box but do require user input. They might access the DOM directly if necessary. These tools use the <code>functionArgs</code> and <code>captureResults</code> parameters within their <code>runCmd</code> method.<br>
-<strong>Example:</strong> <code>show_prompt_window</code></p>
+<strong>Example:</strong> <a href="#example-not-rendered-in-the-chat-box-capturing-user-input">show_prompt_window</a></p>
 </li>
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="custom-ui-tools">Custom UI Tools<a href="#custom-ui-tools" class="hash-link" aria-label="Direct link to Custom UI Tools" title="Direct link to Custom UI Tools">​</a></h3>
