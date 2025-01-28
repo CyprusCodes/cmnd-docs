@@ -38,6 +38,15 @@ For example, asking _"Show me a login form"_ will render a login form.
   <img src={show_form_sample} width="400" />
 </a>
 
+### Types of UI Tools
+
+There are 4 variations of UI tools that you can implement and use. 
+
+1. UI tool that is rendered in the chat box as a message card which doesn't capture user input. These tools have to use the `ref` and `captureResults` parameters within their `runCmd` method. e.g: `plot_graph`
+2. UI tool that is rendered in the chat box as a message card which captures user input. These tools have to use the `ref` parameter within their `runCmd` method. e.g: `capture_signature`
+3. UI tool that is NOT rendered in the chat box which doesn't capture user input. These tools might access DOM directly if necessary. These tools only use the `functionArgs` paramter within `runCmd` method. e.g: `change_background_color`
+4. UI tool that is NOT rendered in the chat box which captures user input. These tools might access DOM directly if necessary. These tools use the `functionArgs` and `captureResults` paramters within their `runCmd` method. e.g: `show_input_modal`
+
 ### Custom UI Tools
 
 Custom UI tools allow you to extend the functionality of the embed widget by defining your own tools tailored to specific use cases. These tools can override the default built-in tools or work alongside them by leveraging `window.cmndBuiltInTools`. Custom tools provide flexibility and adaptability, enabling you to create unique experiences that align with your application's requirements.
