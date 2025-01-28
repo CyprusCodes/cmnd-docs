@@ -212,15 +212,12 @@ window.cmndChat(
 
 ---
 
-### Advanced Custom UI Tool Dom Manipulation Example
+### Example: Rendered in the chat box as a message card, without capturing user input
 
 ```javascript
 {
   name: "plot_graph",
   description: "Plots a graph on the page using Chart.js",
-  category: "UI",
-  subcategory: "Graph",
-  functionType: "ui",
   dangerous: false,
   associatedCommands: [],
   prerequisites: [],
@@ -232,8 +229,9 @@ window.cmndChat(
         enum: ["line", "bar", "pie", "doughnut"],
         errorMessage: {
           required: "Graph type is required",
-          enum: "Graph type must be one of: line, bar, pie, or doughnut"
-        }
+          enum:
+            "Graph type must be one of: line, bar, pie, or doughnut",
+        },
       },
       data: {
         type: "object",
@@ -242,8 +240,8 @@ window.cmndChat(
             type: "array",
             items: { type: "string" },
             errorMessage: {
-              required: "Labels for the graph are required"
-            }
+              required: "Labels for the graph are required",
+            },
           },
           datasets: {
             type: "array",
@@ -255,31 +253,34 @@ window.cmndChat(
                   type: "array",
                   items: { type: "number" },
                   errorMessage: {
-                    required: "Dataset values are required"
-                  }
+                    required: "Dataset values are required",
+                  },
                 },
                 backgroundColor: {
                   type: "array",
-                  items: { type: "string" }
+                  items: { type: "string" },
                 },
                 borderColor: {
                   type: "array",
-                  items: { type: "string" }
+                  items: { type: "string" },
                 },
-                borderWidth: { type: "number" }
-              }
-            }
-          }
+                borderWidth: { type: "number" },
+              },
+            },
+          },
         },
-        required: ["labels", "datasets"]
-      }
+        required: ["labels", "datasets"],
+      },
     },
-    required: ["type", "data"]
+    required: ["type", "data"],
   },
   rerun: true,
   rerunWithDifferentParameters: true,
   capturesUserInput: true,
-  runCmd: ({ functionArgs }, ref) => {
+  runCmd: (
+    { functionArgs, previousRunResults, captureResults },
+    ref
+  ) => {
     const { type, data } = functionArgs;
 
     // Check if Chart.js is already loaded
@@ -305,7 +306,9 @@ window.cmndChat(
     function renderChart() {
       // Ensure the ref element exists
       if (!ref) {
-        console.error("No reference element provided for the chart.");
+        console.error(
+          "No reference element provided for the chart."
+        );
         return;
       }
 
@@ -332,14 +335,207 @@ window.cmndChat(
           maintainAspectRatio: false,
           plugins: {
             legend: {
-              position: "top"
-            }
-          }
-        }
+              position: "top",
+            },
+          },
+        },
       });
 
-      console.log("Graph successfully plotted inside the provided ref.");
+      if (!previousRunResults) {
+        captureResults(
+          "Graph successfully plotted inside the provided ref."
+        );
+      }
     }
+  },
+}
+```
+
+### Example: Rendered in the chat box as a message card, capturing user input
+
+```javascript
+{
+  name: "capture_user_name",
+  description: "Renders a text field to capture the user's name",
+  dangerous: false,
+  associatedCommands: [],
+  prerequisites: [],
+  argumentSchema: {
+    type: "object",
+    properties: {},
+  },
+  rerun: true,
+  rerunWithDifferentParameters: true,
+  capturesUserInput: true,
+  runCmd: ({ previousRunResults, captureResults }, ref) => {
+    // Ensure the ref element exists
+    if (!ref) {
+      console.error("No reference element provided.");
+      return;
+    }
+
+    // Clear the content of the ref
+    ref.innerHTML = "";
+
+    if (previousRunResults) {
+      // Display the user's name if previous results exist
+      const greeting = document.createElement("span");
+      greeting.textContent = `Hello, ${previousRunResults}`;
+      greeting.style.fontSize = "1.2rem";
+      greeting.style.fontWeight = "bold";
+      ref.appendChild(greeting);
+    } else {
+      // Create a container for the input field and button
+      const container = document.createElement("div");
+      container.style.margin = "1rem";
+
+      // Create a label and input field
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Enter your name";
+      input.style.marginRight = "0.5rem";
+
+      // Create a submit button
+      const button = document.createElement("button");
+      button.textContent = "Submit";
+      button.style.padding = "0.5rem 1rem";
+
+      // Append elements to the container
+      container.appendChild(input);
+      container.appendChild(button);
+      ref.appendChild(container);
+
+      // Add event listener for the submit button
+      button.addEventListener("click", () => {
+        const name = input.value.trim();
+        if (name) {
+          captureResults(name);
+
+          // Replace the input and button with the greeting
+          ref.innerHTML = "";
+          const greeting = document.createElement("span");
+          greeting.textContent = `Hello, ${name}`;
+          greeting.style.fontSize = "1.2rem";
+          greeting.style.fontWeight = "bold";
+          ref.appendChild(greeting);
+        } else {
+          alert("Please enter a name.");
+        }
+      });
+    }
+  }
+}
+```
+
+---
+
+
+### Example: Not rendered in the chat box, without capturing user input
+```javascript
+{
+  name: "change_background_color",
+  description: "Changes the background color of the page",
+  category: "UI",
+  subcategory: "BG",
+  functionType: "ui",
+  dangerous: false,
+  associatedCommands: [],
+  prerequisites: [],
+  argumentSchema: {
+    type: "object",
+    properties: {
+      bgColor: {
+        type: "string",
+        minLength: 1,
+        errorMessage: {
+          required: "Background Color is required",
+        },
+      },
+    },
+    required: ["bgColor"],
+  },
+  rerun: true,
+  rerunWithDifferentParameters: true,
+  capturesUserInput: false,
+  runCmd: (
+    { functionArgs, previousRunResults, captureResults },
+    ref
+  ) => {
+    const { bgColor } = functionArgs;
+    if (!previousRunResults) {
+      captureResults(`Background color changed to ${bgColor}`);
+    }
+    const messageContainer = ref;
+    if (messageContainer) {
+      console.log("we got message container", messageContainer);
+      messageContainer.innerHTML = `Background color changed to ${bgColor}`;
+    }
+    document.body.style.backgroundColor = bgColor;
+  }
+}
+```
+
+---
+
+### Example: Not rendered in the chat box, capturing user input
+
+```javascript
+{
+  name: "show_prompt_window",
+  description:
+    "Prompts the user with a message and captures their input",
+  category: "UI",
+  subcategory: "Prompt",
+  functionType: "ui",
+  dangerous: false,
+  associatedCommands: [],
+  prerequisites: [],
+  argumentSchema: {
+    type: "object",
+    properties: {
+      message: {
+        type: "string",
+        minLength: 1,
+        errorMessage: {
+          required: "Prompt message is required",
+        },
+      },
+    },
+    required: ["message"],
+  },
+  rerun: true,
+  rerunWithDifferentParameters: true,
+  capturesUserInput: true,
+  runCmd: (
+    { functionArgs, previousRunResults, captureResults },
+    ref
+  ) => {
+    if (previousRunResults) {
+      return;
+    }
+    const { message } = functionArgs;
+
+    // Prompt the user with the provided message
+    const userInput = prompt(message);
+
+    // If user input is captured, store the result
+    if (userInput !== null) {
+      captureResults(`User entered: ${userInput}`);
+    } else {
+      captureResults("User cancelled the prompt.");
+    }
+
+    // If a reference element is provided, display the user input there
+    const messageContainer = ref;
+    if (messageContainer) {
+      messageContainer.innerHTML =
+        userInput !== null
+          ? `User input: ${userInput}`
+          : "Prompt was cancelled by the user.";
+    }
+
+    // Return the user input for further processing
+    return userInput;
   }
 }
 ```
