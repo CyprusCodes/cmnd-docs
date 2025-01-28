@@ -176,16 +176,18 @@ We do not need to register [built-in tools](#built-in-tools), but we need to reg
 // script.js
 window.cmndChat(
   "registerTools",
-   ui_tools: [
+  {
+    ui_tools: [
       {
          name: "change_background_color",
          // ... other values
-      }
+      },
       {
          name: "navigate_to_page",
          //... other values
       }
-   ]
+    ]
+  }
 );
 ```
 
@@ -195,18 +197,20 @@ To extend **custom UI tools** with **built-in tools** you will need to include t
 // script.js
 window.cmndChat(
   "registerTools",
-   ui_tools: [
+   {
+    ui_tools: [
       window.cmndBuiltInTools.capture_signature,
       window.cmndBuiltInTools.show_form,
       {
          name: "change_background_color",
          // ... other values
-      }
+      },
       {
          name: "navigate_to_page",
          //... other values
       }
-   ]
+    ]
+   }
 );
 ```
 
