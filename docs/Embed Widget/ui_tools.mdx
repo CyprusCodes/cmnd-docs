@@ -40,12 +40,25 @@ For example, asking _"Show me a login form"_ will render a login form.
 
 ### Types of UI Tools
 
-There are 4 variations of UI tools that you can implement and use. 
+# Types of UI Tools
 
-1. UI tool that is rendered in the chat box as a message card which doesn't capture user input. These tools have to use the `ref` and `captureResults` parameters within their `runCmd` method. e.g: `plot_graph`
-2. UI tool that is rendered in the chat box as a message card which captures user input. These tools have to use the `ref` parameter within their `runCmd` method. e.g: `capture_signature`
-3. UI tool that is NOT rendered in the chat box which doesn't capture user input. These tools might access DOM directly if necessary. These tools only use the `functionArgs` paramter within `runCmd` method. e.g: `change_background_color`
-4. UI tool that is NOT rendered in the chat box which captures user input. These tools might access DOM directly if necessary. These tools use the `functionArgs` and `captureResults` paramters within their `runCmd` method. e.g: `show_input_modal`
+There are four variations of UI tools that you can implement and use:
+
+1. **Rendered in the chat box as a message card, without capturing user input**  
+   These tools are displayed in the chat box as message cards and do not require user input. They must use the `ref` parameter within their `runCmd` method.
+   **Example:** `plot_graph`
+
+2. **Rendered in the chat box as a message card, capturing user input**  
+   These tools are displayed in the chat box as message cards and require user input. They must use the `ref` and `captureResults` parameters within their `runCmd` method.  
+   **Example:** `capture_signature`
+
+3. **Not rendered in the chat box, without capturing user input**  
+   These tools are not displayed in the chat box and do not require user input. They might access the DOM directly if necessary. These tools only use the `functionArgs` parameter within their `runCmd` method.  
+   **Example:** `change_background_color`
+
+4. **Not rendered in the chat box, capturing user input**  
+   These tools are not displayed in the chat box but do require user input. They might access the DOM directly if necessary. These tools use the `functionArgs` and `captureResults` parameters within their `runCmd` method.  
+   **Example:** `show_prompt_window`
 
 ### Custom UI Tools
 
@@ -149,7 +162,9 @@ Example functionality:
     The function that implements the tool’s functionality. It receives:
 
     - `functionArgs`: Contains the tool's arguments (e.g., `bgColor`).
-    - `ref`: A reference to a DOM element that can be updated.
+    - `captureResults`: Callback function. You must call this function with the input you captured from the user as a string. If your tool doesn't capture user input, you can call it with an informational message e.g "Displayed plot chart to the user."
+    - `previousRunResults`: If the tool was run previously, it contains the string `captureResults` was called with. You can check this to prevent re-evaluating the same tool twice.
+    - `ref`: A reference to the DOM element where you can render your own UI elements within the chat box message card.
 
 ---
 
