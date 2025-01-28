@@ -112,25 +112,15 @@ Example functionality:
    A short description of what the tool does.  
    Example: `"Changes the background color of the page"`
 
-3. **`category`** and **`subcategory`**  
-   Logical groupings for the tool.  
-   Example:
-
-   - `category`: `"UI"`
-   - `subcategory`: `"BG"`
-
-4. **`functionType`**  
-   Must always be set to `"ui"` for custom tools.
-
-5. **`dangerous`**  
+3. **`dangerous`**  
    Indicates whether the tool performs potentially harmful actions.  
    Example: `false`
 
-6. **`associatedCommands`** and **`prerequisites`**  
+4. **`associatedCommands`** and **`prerequisites`**  
    Define additional commands or prerequisites required by the tool. These can be left empty if not needed.  
    Example: `[]`
 
-7. **`argumentSchema`**  
+5. **`argumentSchema`**  
    Defines the arguments required to run the tool in JSON schema format:
 
    - `properties`: Lists the arguments.  
@@ -138,15 +128,15 @@ Example functionality:
    - `required`: Specifies mandatory arguments.
    - `errorMessage`: Custom error messages for validation.
 
-8. **`rerun`** and **`rerunWithDifferentParameters`**  
+6. **`rerun`** and **`rerunWithDifferentParameters`**  
    Specifies if the tool can be rerun with the same or modified parameters.  
    Example: Both set to `true`.
 
-9. **`capturesUserInput`**  
-   Indicates whether the tool interacts with user input.  
+7. **`capturesUserInput`**  
+   This parameter denotes whether the given UI tool is responsible for capturing input from the user. For example, if your UI tool is showing an input field that is filled by the user, then you should set this parameter to true. If your UI tool is only showing information but is not responsible for capturing input e.g showing an image, or a chart you can set this to false. When this field is set to true, chatbot will display the UI tool and respond back to the user acknowledging the successful run of the tool. If it's set to false, it will only dislay the tool but it won't respond.
    Example: `true`
 
-10. **`runCmd`**  
+8. **`runCmd`**  
     The function that implements the tool’s functionality. It receives:
 
     - `functionArgs`: Contains the tool's arguments (e.g., `bgColor`).
