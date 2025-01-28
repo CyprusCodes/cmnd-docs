@@ -40,25 +40,23 @@ For example, asking _"Show me a login form"_ will render a login form.
 
 ### Types of UI Tools
 
-# Types of UI Tools
-
 There are four variations of UI tools that you can implement and use:
 
 1. **Rendered in the chat box as a message card, without capturing user input**  
    These tools are displayed in the chat box as message cards and do not require user input. They must use the `ref` parameter within their `runCmd` method.
-   **Example:** `plot_graph`
+   **Example:** [plot_graph](#example-rendered-in-the-chat-box-as-a-message-card-without-capturing-user-input)
 
 2. **Rendered in the chat box as a message card, capturing user input**  
    These tools are displayed in the chat box as message cards and require user input. They must use the `ref` and `captureResults` parameters within their `runCmd` method.  
-   **Example:** `capture_signature`
+   **Example:** `[capture_user_name](#example-rendered-in-the-chat-box-as-a-message-card-capturing-user-input)
 
 3. **Not rendered in the chat box, without capturing user input**  
    These tools are not displayed in the chat box and do not require user input. They might access the DOM directly if necessary. These tools only use the `functionArgs` parameter within their `runCmd` method.  
-   **Example:** `change_background_color`
+   **Example:** [change_background_color](#example-not-rendered-in-the-chat-box-without-capturing-user-input)
 
 4. **Not rendered in the chat box, capturing user input**  
    These tools are not displayed in the chat box but do require user input. They might access the DOM directly if necessary. These tools use the `functionArgs` and `captureResults` parameters within their `runCmd` method.  
-   **Example:** `show_prompt_window`
+   **Example:** [show_prompt_window](#example-not-rendered-in-the-chat-box-capturing-user-input)
 
 ### Custom UI Tools
 
