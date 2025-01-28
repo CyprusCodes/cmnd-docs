@@ -10,7 +10,7 @@ import show_form_sample from "../../static/img/ui_tools_images/show_form_sample.
 
 The embed widget offers the ability to run tools with AI context or arguments, allowing you to display information or manipulate the DOM based on the customization provided to the tool. Additionally, it includes a set of built-in tools accessible via `window.cmndBuiltInTools`.
 
-### built-in tools
+### Built-in tools
 
 The built-in tools are pre configured utilities that come with the embed widget. These tools are available by default unless you provide custom tools.
 
@@ -37,26 +37,6 @@ For example, asking _"Show me a login form"_ will render a login form.
 <a href={show_form_sample} target="_blank">
   <img src={show_form_sample} width="400" />
 </a>
-
-### Types of UI Tools
-
-There are four variations of UI tools that you can implement and use:
-
-1. **Rendered in the chat box as a message card, without capturing user input**  
-   These tools are displayed in the chat box as message cards and do not require user input. They must use the `ref` parameter within their `runCmd` method.
-   **Example:** [plot_graph](#example-rendered-in-the-chat-box-as-a-message-card-without-capturing-user-input)
-
-2. **Rendered in the chat box as a message card, capturing user input**  
-   These tools are displayed in the chat box as message cards and require user input. They must use the `ref` and `captureResults` parameters within their `runCmd` method.  
-   **Example:** [capture_user_name](#example-rendered-in-the-chat-box-as-a-message-card-capturing-user-input)
-
-3. **Not rendered in the chat box, without capturing user input**  
-   These tools are not displayed in the chat box and do not require user input. They might access the DOM directly if necessary. These tools only use the `functionArgs` parameter within their `runCmd` method.  
-   **Example:** [change_background_color](#example-not-rendered-in-the-chat-box-without-capturing-user-input)
-
-4. **Not rendered in the chat box, capturing user input**  
-   These tools are not displayed in the chat box but do require user input. They might access the DOM directly if necessary. These tools use the `functionArgs` and `captureResults` parameters within their `runCmd` method.  
-   **Example:** [show_prompt_window](#example-not-rendered-in-the-chat-box-capturing-user-input)
 
 ### Custom UI Tools
 
@@ -211,6 +191,26 @@ window.cmndChat(
    }
 );
 ```
+
+### Types of Custom UI Tools
+
+There are four variations of UI tools that you can implement and use:
+
+1. **Rendered in the chat box as a message card, without capturing user input**  
+   These tools are displayed in the chat box as message cards and do not require user input. They must use the `ref` parameter within their `runCmd` method.
+   **Example:** [plot_graph](#example-rendered-in-the-chat-box-as-a-message-card-without-capturing-user-input)
+
+2. **Rendered in the chat box as a message card, capturing user input**  
+   These tools are displayed in the chat box as message cards and require user input. They must use the `ref` and `captureResults` parameters within their `runCmd` method.  
+   **Example:** [capture_user_name](#example-rendered-in-the-chat-box-as-a-message-card-capturing-user-input)
+
+3. **Not rendered in the chat box, without capturing user input**  
+   These tools are not displayed in the chat box and do not require user input. They might access the DOM directly if necessary. These tools only use the `functionArgs` parameter within their `runCmd` method.  
+   **Example:** [change_background_color](#example-not-rendered-in-the-chat-box-without-capturing-user-input)
+
+4. **Not rendered in the chat box, capturing user input**  
+   These tools are not displayed in the chat box but do require user input. They might access the DOM directly if necessary. These tools use the `functionArgs` and `captureResults` parameters within their `runCmd` method.  
+   **Example:** [show_prompt_window](#example-not-rendered-in-the-chat-box-capturing-user-input)
 
 ---
 
