@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.5.2">
 <title data-rh="true">UI Tools | CMND</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="UI Tools | CMND"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/cmnd-favicon-v3.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools" hreflang="en"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/Embed Widget/ui_tools" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="CMND RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="CMND Atom Feed"><link rel="stylesheet" href="/assets/css/styles.bfb58ac0.css">
-<script src="/assets/js/runtime~main.9df247f6.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.c0aac839.js" defer="defer"></script>
 <script src="/assets/js/main.2ac7f6a4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -68,19 +68,6 @@ Example functionality:</p>
 <!-- -->Example: <code>&quot;Changes the background color of the page&quot;</code></p>
 </li>
 <li>
-<p><strong><code>category</code></strong> and <strong><code>subcategory</code></strong><br>
-<!-- -->Logical groupings for the tool.<br>
-<!-- -->Example:</p>
-<ul>
-<li><code>category</code>: <code>&quot;UI&quot;</code></li>
-<li><code>subcategory</code>: <code>&quot;BG&quot;</code></li>
-</ul>
-</li>
-<li>
-<p><strong><code>functionType</code></strong><br>
-<!-- -->Must always be set to <code>&quot;ui&quot;</code> for custom tools.</p>
-</li>
-<li>
 <p><strong><code>dangerous</code></strong><br>
 <!-- -->Indicates whether the tool performs potentially harmful actions.<br>
 <!-- -->Example: <code>false</code></p>
@@ -107,8 +94,8 @@ Example functionality:</p>
 </li>
 <li>
 <p><strong><code>capturesUserInput</code></strong><br>
-<!-- -->Indicates whether the tool interacts with user input.<br>
-<!-- -->Example: <code>true</code></p>
+<!-- -->This parameter denotes whether the given UI tool is responsible for capturing input from the user. For example, if your UI tool is showing an input field that is filled by the user, then you should set this parameter to true. If your UI tool is only showing information but is not responsible for capturing input e.g showing an image, or a chart you can set this to false. When this field is set to true, chatbot will display the UI tool and respond back to the user acknowledging the successful run of the tool. If it&#x27;s set to false, it will only dislay the tool but it won&#x27;t respond.
+Example: <code>true</code></p>
 </li>
 <li>
 <p><strong><code>runCmd</code></strong><br>
