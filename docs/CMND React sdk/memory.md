@@ -7,7 +7,7 @@ sidebar_position: 4
 ## Introduction
 
 The CMND React SDK provides memory management capabilities that allow you to store and manage conversation context through the `initialMemory` prop and memory management functions. Refer to the [Memory Object Documentation
-](https://docs.cmnd.ai/docs/tools_config/memory-object/) for context.
+](/docs/tools_config/memory-object) for more information on when you should leverage `memory` object in your extensions.
 
 ## Memory Features
 
