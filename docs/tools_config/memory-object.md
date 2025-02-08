@@ -86,7 +86,7 @@ def get_passenger_details(memory: dict):
 ```
 Here we are passing the whole table to the function and then using pandas library to pass only the necessary columns to LLM for in debt analysis of fares.
 
-### Conclusion:
+## Conclusion:
 - Use memory object to efficiently pass large chunks of data between tools.
 - Add "memory" to parameters list in order to use it. 
 - Return the memory object as well as a response in order to pass it to other tools.
