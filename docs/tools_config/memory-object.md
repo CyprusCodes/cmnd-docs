@@ -8,7 +8,7 @@ sidebar_position: 3
 
 A memory object serves the purpose of transferring large chunks of data between multiple independent tools within one conversation. This is useful when you want to keep important but large contextual information.
 
-## How to use:
+## How to use
 
 When writing a tool, add a memory object within the tool parameters and then return it within the response.
 
@@ -100,14 +100,13 @@ In some cases, you may need to use memory items to guide the chatbot’s behavio
 
 Additionally, EJS supports JavaScript expressions within the prompt. This means you can include dynamic values like the current date using `<%= new Date().toDateString() %>` or perform other JavaScript operations as needed. By leveraging EJS, you can enhance the chatbot's flexibility and make it more responsive to user data stored in memory.
 
-#### Example: Using the User’s Name
+#### Example: Greeting user with their name
 
 If you want the chatbot to personalize its greeting based on the user’s name, you can structure the system prompt as follows:
 
 System Prompt Example:
 
-```You are a helpful assistant responsible for recommending suitable supplements for bodybuilding. When the user starts a conversation, greet them by saying "Hi, <%= memory.name %>!" and then provide a list of recommended supplements.
-```
+```You are a helpful assistant responsible for recommending suitable supplements for bodybuilding. When the user starts a conversation, greet them by saying "Hi, <%= memory.name %>!" and then provide a list of recommended supplements.```
 
 #### Example: Using the User’s Email and Date
 
@@ -121,7 +120,7 @@ Using EJS in system prompts makes it easy to pass memory values into the chatbot
 
 For more information, check out the [EJS Documentation](https://ejs.co/).
 
-## Conclusion:
+## Conclusion
 
 - Use memory object to efficiently pass large chunks of data between tools.
 - Add "memory" to parameters list in order to use it.
