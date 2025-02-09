@@ -86,7 +86,40 @@ def get_passenger_details(memory: dict):
 ```
 Here we are passing the whole table to the function and then using pandas library to pass only the necessary columns to LLM for in debt analysis of fares.
 
+
+## Using memory items in system prompt
+
+In some cases, you may need to use memory items to guide the chatbot’s behavior dynamically. For example, if you want the chatbot to greet the user by name (e.g., "Hi, X"), you can use EJS (Embedded JavaScript) to insert values from memory directly into the system prompt. This allows for a more personalized and context-aware chatbot experience.
+
+Additionally, EJS supports JavaScript expressions within the prompt. This means you can include dynamic values like the current date using <%= new Date().toDateString() %> or perform other JavaScript operations as needed. By leveraging EJS, you can enhance the chatbot's flexibility and make it more responsive to user data stored in memory.
+
+### Example: Using the User’s Name
+
+If you want the chatbot to personalize its greeting based on the user’s name, you can structure the system prompt as follows:
+
+System Prompt Example:
+
+`You are a helpful assistant responsible for recommending suitable supplements for bodybuilding. When the user starts a conversation, greet them by saying "Hi, <%= memory.name %>!" and then provide a list of recommended supplements.
+``
+
+### Example: Using the User’s Email and Date
+
+If the chatbot is designed to assist users in composing and sending emails, you can include memory-based variables such as the user’s email address and the current date:
+
+System Prompt Example:
+
+`You are a helpful assistant designed to help users write and send emails. When the user asks you to draft an email, use their email address <%= memory.email %> and include the current date: <%= new Date().toDateString() %>.
+
+
+Using EJS in system prompts makes it easy to pass memory values into the chatbot’s responses while also enabling basic JavaScript operations for additional customization. This ensures that chatbot interactions remain dynamic, relevant, and tailored to each user.
+
+For more information, check out the [EJS Documentation](https://ejs.co/). 
+
+
+
 ## Conclusion:
 - Use memory object to efficiently pass large chunks of data between tools.
 - Add "memory" to parameters list in order to use it. 
 - Return the memory object as well as a response in order to pass it to other tools.
+- Use Embedded JavaScript templating (EJS) to dynamically insert memory values into the system prompt
+ 
