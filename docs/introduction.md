@@ -14,4 +14,4 @@ Here's a quick overview of what CMND.ai offers:
 - **CMND React SDK:** For developers, our React SDK provides pre-built components and APIs to integrate AI capabilities into your React applications.
 - **Embed Widget:** Easily add interactive AI elements to your website with our embeddable widget, without extensive coding.
 
-CMND.ai provides everything you need to make the most of Language Learning Models. You can talk to them naturally, enhance their capabilities by connecting your tools, and turn CMND into the perfect assistant for your needs. From there, you can build your own custom solutions and even embed them directly on your website
+CMND.ai provides everything you need to make the most of Language Learning Models. You can talk to them naturally, enhance their capabilities by connecting your tools, and turn CMND into the perfect assistant for your needs. From there, you can build your own custom solutions and even embed them directly on your website.
