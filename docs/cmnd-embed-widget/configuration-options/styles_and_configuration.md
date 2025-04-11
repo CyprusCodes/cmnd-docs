@@ -14,7 +14,7 @@ The CMND Embed Widget offers extensive customization through two types of config
 
 ## Hardcoded Configurations
 
-These configurations are specified directly in the object passed to the [`init`](/docs/Embed%20Widget/commands) command when embedding the widget on your site.
+These configurations are specified directly in the object passed to the `init` command when embedding the widget on your site.
 
 | Parameter                  | Type    | Description                                                     | Default |
 | -------------------------- | ------- | --------------------------------------------------------------- | ------- |

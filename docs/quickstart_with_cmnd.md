@@ -81,4 +81,4 @@ Check out our open-source example app: [CMND React Chatbot Example on GitHub](ht
 
 ## 🎉 That's it!
 
-You now have a fully working AI chatbot running inside your React application. From here, you can explore advanced features like connecting tools, building assistants, and customizing your chatbot even further using the [CMND React SDK](docs.cmnd.ai/cmnd-react-sdk).
+You now have a fully working AI chatbot running inside your React application. From here, you can explore advanced features like connecting tools, building assistants, and customizing your chatbot even further using the CMND React SDK.
