@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
 };
 
@@ -34,16 +34,16 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_code_review.svg").default,
     description: (
       <>
-        CMDN.ai uses Role Based Access controls to make sure only authorised
+        CMND.ai uses Role Based Access controls to make sure only authorised
         staff can see relevant data and utilise platform connections.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
