@@ -21,4 +21,4 @@ The CMND React SDK is built to help developers bring CMND-powered AI chatbots in
 - **Hook into chat events** — Want to trigger custom logic when a user sends a message or a tool is called? You can do that via callbacks.
 - **Support tools and assistants** — Whether you're using a simple LLM or a full assistant with tools and context, the SDK supports both setups.
 
-You can use the SDK as-is for fast setup, or dig into the internals to build a completely [custom experience](docs.cmnd.ai/cmnd-react-sdk/configuration-options) — up to you.
+You can use the SDK as-is for fast setup, or dig into the internals to build a completely custom experience — up to you.
