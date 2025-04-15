@@ -10,6 +10,6 @@ When considering the creation of a tool, the focus lies in providing the assista
 
 Regarding the interaction between tools and assistants, the process unfolds as follows: Upon receiving a user prompt, such as "What is the weather in Jerusalem," the LLM autonomously identifies the need for a tool to accomplish the task, as it lacks the capability to do so itself. Subsequently, the LLM extracts relevant parameters (City: Jerusalem) from the user prompt and utilizes them to execute the tool (function). The function then carries out the necessary task and returns the data. Finally, the assistant utilizes this retrieved data to formulate the final response to the user.
 
-## The interaction between Language Learning Models (LLMs), Assistants, and Tools
+## The interaction between Large Language Models (LLMs), Assistants, and Tools
 
 ![../../static/img/assistants.png](../../static/img/assistants.png)
