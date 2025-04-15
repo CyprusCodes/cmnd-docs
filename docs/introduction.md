@@ -10,6 +10,7 @@ Here's a quick overview of what CMND.ai offers:
 
 - **Conversations:** Engage in natural language interactions with LLMs. Our LLM-Proxy provides a consistent interface, making it easier to switch between models and manage API interactions.
 - **Connections:** Extend LLM functionality by connecting to external tools. Integrate with existing services like Google Workspace or build custom integrations using Python or JavaScript to connect to your databases and other systems/services.
+- **Knowledge Bases:** Upload and connect documents or structured content to give your assistant grounded, organization-specific knowledge that can be retrieved in real time during conversations.
 - **Assistants:** Create text-based assistants that combine natural language processing with connected tools to automate workflows and provide information.
 - **CMND React SDK:** For developers, our React SDK provides pre-built components and APIs to integrate AI capabilities into your React applications.
 - **Embed Widget:** Easily add interactive AI elements to your website with our embeddable widget, without extensive coding.
