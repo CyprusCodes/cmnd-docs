@@ -2,7 +2,7 @@
 id: connect-to-cmnd
 title: Connecting Your Tool to CMND.ai
 description: How to connect your custom tool to the CMND.ai platform
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Connecting Your Tool to CMND.ai
@@ -19,7 +19,7 @@ Go to [app.cmnd.ai](https://app.cmnd.ai) and log in to your account.
 
 From the sidebar, navigate to the **Connections** section:
 
-![Connections Sidebar](../../static/img/integrations/connections.png)
+![Connections Sidebar](../../../static/img/integrations/connections.png)
 
 ---
 
@@ -29,7 +29,7 @@ From the sidebar, navigate to the **Connections** section:
 
 2. In the search bar enter "CMND Extensions API" an dselect the result.
 
-![CMND Extensions API](../../static/img/integrations/cmnd-extensions-api.png)
+![CMND Extensions API](../../../static/img/integrations/cmnd-extensions-api.png)
 
 2. Fill in the required fields:
 
@@ -37,7 +37,7 @@ From the sidebar, navigate to the **Connections** section:
    - **API Base URL**: This is the public URL of your tool server (e.g., from Ngrok)
    - **Token**: If your extension requires a token enter one, otherwise leave the default value
 
-   ![Fields to Create New Connections](../../static/img/integrations/create-new-connection.png)
+   ![Fields to Create New Connections](../../../static/img/integrations/create-new-connection.png)
 
    :::warning
    Do **not** include a trailing `/` at the end of the API URL.
@@ -45,7 +45,7 @@ From the sidebar, navigate to the **Connections** section:
 
 3. Submit the form. If everything is correct, you’ll see a confirmation:
 
-   ![Tool Added](../../static/img/integrations/tool-added.png)
+   ![Tool Added](../../../static/img/integrations/tool-added.png)
 
 ---
 
@@ -55,7 +55,7 @@ From the sidebar, navigate to the **Connections** section:
 2. Select the assistant or conversation you want to enhance.
 3. Scroll to the **Tools** section, and locate the CMND Extension collapse — you should see your tools listed there.
 
-   ![Tool Selection](../../static/img/integrations/tool-selection.png)
+   ![Tool Selection](../../../static/img/integrations/tool-selection.png)
 
 ---
 
