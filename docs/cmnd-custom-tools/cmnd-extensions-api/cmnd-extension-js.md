@@ -2,7 +2,7 @@
 id: custom-tool-js
 title: Build a Custom Tool – JavaScript
 description: How to build a CMND Custom Tool using JavaScript
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # Build a Custom Tool – JavaScript

@@ -15,6 +15,20 @@ This means your assistants can do more than talk — they can act.
 
 ---
 
+## Ways to Create Custom Tools
+
+You can build and connect custom tools in CMND.ai in two ways:
+
+- [**CMND Extensions API:**](https://docs.cmnd.ai/docs/category/cmnd-extensions-api)
+  Develop your tool externally using your own infrastructure (e.g., FastAPI, Flask, Node.js), then connect it to CMND via a secure public endpoint.
+
+- [**CMND Extensions Studio:**](https://docs.cmnd.ai/docs/cmnd-custom-tools/extensions-studio)
+  Create and deploy your tool entirely within CMND’s web platform — no separate hosting needed. Ideal for quick setups, prototypes, or simpler tools.
+
+Both options give you full flexibility over your tool’s behavior, schema, and integration.
+
+---
+
 ## What You Can Do with Custom Tools
 
 - **Connect LLMs to your backend logic**  
