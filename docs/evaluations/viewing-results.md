@@ -41,7 +41,7 @@ The timeline displays the full conversation flow with:
 - **Tool responses**: Tool execution results
 - **Pass/fail indicators**: Visual status for evaluated turns
 
-![Run Details conversation timeline](/img/evaluations/run_details_page.png)
+![Run Details conversation timeline](/img/evaluations/conversation_transcript.png)
 
 ---
 

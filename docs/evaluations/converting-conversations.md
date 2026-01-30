@@ -25,7 +25,6 @@ When viewing a conversation's details, you can convert it directly into an evalu
 1. Navigate to **Conversations** in your chatbot
 2. Find the conversation you want to convert
 3. Open the conversation details
-
 ![Conversation details page](/img/evaluations/conversation_transcript.png)
 
 ---
